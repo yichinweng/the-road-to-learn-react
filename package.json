@@ -1,5 +1,6 @@
 {
   "name": "the-road-to-learn-react",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
