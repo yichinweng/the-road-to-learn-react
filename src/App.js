@@ -37,10 +37,15 @@ class App extends Component {
     // const 是常數不可改變，若為 Array 或 Object 可以更新內容(pass by reference)
     // 不變用 const，會變用 let，少用或不用 var
     const helloWorld = 'Welcome to The Road To Learn React',
+        firstName = 'Winter',
+        key = 'lastName',
         person = {
-          'lastName': 'Weng'
+          [key]: 'Weng', // ES6: 可以用變數作為 key
+          firstName, // ES6: key 與 value 相同可簡寫
+          getUserName() { // ES5: getUserName: function() {
+            return `${this.lastName} ${this.firstName}`;
+          },
         };
-        person.firstName = 'Winter';
     return (
       <div className="App">
         <header className="App-header">
@@ -49,7 +54,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload. <br/>
-          I'm {`${person.firstName} ${person.lastName}`} :)
+          I'm {person.getUserName()} :)
         </p>
         <section className="App-intro">
           {
