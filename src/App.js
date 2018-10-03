@@ -26,6 +26,13 @@ const list = [
 
 class App extends Component {
   // render 是 Component Class 的方法
+  constructor(props) {
+    // 有建構子時必須要寫 super(); 呼叫父類別的建構子
+    super(props);
+    this.state = {
+      list,
+    };
+  }
   render() {
     // const 是常數不可改變，若為 Array 或 Object 可以更新內容(pass by reference)
     // 不變用 const，會變用 let，少用或不用 var
